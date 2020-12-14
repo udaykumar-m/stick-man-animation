@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>body move</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(to bottom right, black 0%, #3498DB 100%);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .text{
+            position: absolute;
+            margin-top: 45vh;
+            font-size: 10vh;
+            text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        }
+        
+    </style>
+</head>
+<body>
+        <span class="text" style="margin-left:13vw ; color: red;" id="text">R</span>
+        <span class="text" style="margin-left:23vw ; color: orange;" id="text1">A</span>
+        <span class="text" style="margin-left:33vw ; color: yellow;" id="text2">I</span>
+        <span class="text" style="margin-left:43vw ; color: green;" id="text3">N</span>
+        <span class="text" style="margin-left:53vw ; color: blue;" id="text4">B</span>
+        <span class="text" style="margin-left:63vw ; color: indigo;" id="text5">O</span>
+        <span class="text" style="margin-left:73vw ; color: violet;" id="text6">W</span>
+        
+        <img src="stick.png" id="start" alt="">
+        
+    <script>
+        // document.getElementById('text').style.display = 'none';
+        document.getElementById('text').style.visibility = "hidden";
+        document.getElementById('text1').style.visibility = "hidden";
+        document.getElementById('text2').style.visibility = "hidden";
+        document.getElementById('text3').style.visibility = "hidden";
+        document.getElementById('text4').style.visibility = "hidden";
+        document.getElementById('text5').style.visibility = "hidden";
+        document.getElementById('text6').style.visibility = "hidden";
+        let theImg = document.getElementById('start');
+        let height= 700;
+        let mTop = 10;
+        let left = 0;
+        for (let i = 0; i < 10; i++) {
+            
+            (function(index) {
+                setTimeout(function() { 
+                    theImg.height = height ;
+                    theImg.style.marginTop = mTop+"vh";
+                    theImg.style.marginLeft = left+"vw";
+                    height=height-60;
+                    mTop= mTop+3;
+                    left=left+10;
+                    if (i>1) {
+                        document.getElementById('text').style.visibility = "visible";
+                    }
+                    if (i>2) {
+                        document.getElementById('text1').style.visibility = "visible";
+                    }
+                    if (i>3) {
+                        document.getElementById('text2').style.visibility = "visible";
+                    }
+                    if (i>4) {
+                        document.getElementById('text3').style.visibility = "visible";
+                    }
+                    if (i>5) {
+                        document.getElementById('text4').style.visibility = "visible";
+                    }
+                    if (i>6) {
+                        document.getElementById('text5').style.visibility = "visible";
+                    }
+                    if (i>7) {
+                        document.getElementById('text6').style.visibility = "visible";
+                    }
+                    
+                },i * 1000);
+            })(i);  
+             
+        }
+    </script>
+</body>
+</html>
